@@ -76,6 +76,19 @@
 
 		}
 	}
+	function swap() {
+            let cyclerItems = document.getElementsByClassName("cycler")
+            let container = document.getElementById("target")
+            let x = Math.floor(Math.random() * cyclerItems.length)
+            let y = Math.floor(Math.random() * cyclerItems.length)
+            let inialText = document.getElementsByClassName("cycler")[x]
+            let finalText = document.getElementsByClassName("cycler")[y]
+            if(cyclerItems.length > 1) {
+                let temp = inialText.innerHTML
+                inialText.innerHTML = finalText.innerHTML
+                finalText.innerHTML = temp
+            }
+        }
 </script>
 </body>
 

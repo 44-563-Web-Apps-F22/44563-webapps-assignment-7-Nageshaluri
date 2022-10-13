@@ -137,6 +137,7 @@
             </div>
         </div>
     </div>
+    <button type="button" class="btn btn-danger" onclick="random()">Random value</button>
 
     <script>
         let ids = ["pic-01", "pic-02", "pic-03", "pic-04", "pic-05", "pic-06", "pic-07", "pic-08", "pic-09", "pic-10", "pic-11", "pic-12", "pic-13", "pic-14", "pic-15", "pic-16", "pic-17", "pic-18", "pic-19", "pic-20", "pic-21", "pic-22", "pic-23", "pic-24", "pic-25"]
@@ -192,6 +193,16 @@
                 document.getElementById("help").innerHTML = "Sorry, no help available"
             }
         }
+        function random() {
+            console.log("testing")
+            document.getElementById("chests").innerHTML = "Number of chests checked is "+ 0
+            document.getElementById("score").innerHTML = "Score is "+ 0
+            treasureLocation = Math.floor(Math.random() * 25)
+            if(treasureLocation == 12){
+                random()
+            }
+        }
+
     </script>
 
 </body>
