@@ -36,14 +36,20 @@
 		<div class="cycler">row item 1</div>
 		<div class="cycler">row item 2</div>
 		<div class="cycler">row item 3</div>
+
 	</div>
 
-	<p> Press the button to create an new element of type div and then add it to the container.
+	<p class="message"> Press the button to create an new element of type div and then add it to the container.
 	</p>
-	<button onclick="makeNewDiv()">Add value</button>
+
 	<label for="inputElement">type one text: </label>
 	<input class="form-control" type="text" name="input" id="inputElement" value="">
-</body>
+	<div class="container text-center">
+		<button type="button" class="btn btn-secondary" onclick="makeNewDiv()">Add value</button>
+		<button type="button" class="btn btn-success" onclick="get()">Get</button>
+		<button type="button" class="btn btn-primary" onclick="spin()">Spin</button>
+	</div>
+
 <script>
 	function makeNewDiv() {
 		let element = document.createElement("div")
@@ -54,6 +60,23 @@
 		container.appendChild(element)
 
 	}
+	function get() {
+		let cyclerItems = document.getElementsByClassName("cycler")
+		if (cyclerItems.length > 0) {
+			cyclerItems[cyclerItems.length - 1].remove()
+		}
+	}
+	function spin() {
+		let cyclerItems = document.getElementsByClassName("cycler")
+		if (cyclerItems.length > 1) {
+			removedItem = cyclerItems[cyclerItems.length - 1]
+			cyclerItems[cyclerItems.length - 1].remove()
+			let container = document.getElementById("target")
+			container.insertBefore(removedItem, container.firstChild)
+
+		}
+	}
 </script>
+</body>
 
 </html>
